@@ -1,3 +1,4 @@
+import os
 import assemblyai as aai
 from elevenlabs import Voice, play, generate
 from openai import OpenAI
@@ -5,7 +6,7 @@ from openai import OpenAI
 class AI_Assistant:
     def __init__(self):
         # Initialize AssemblyAI client
-        self.client = aai.Client(api_key="REDACTED_ASSEMBLYAI_KEY")
+        self.client = aai.Client(api_key=os.getenv("ASSEMBLYAI_API_KEY"))
         
         # Initialize OpenAI client
         self.openai_client = OpenAI(api_key="your-openai-key")
